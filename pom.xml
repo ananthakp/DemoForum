@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.scholastic</groupId>
+  <artifactId>profiling</artifactId>
+  <version>0.0.2</version>
+  <pluginRepositories>
+    <pluginRepository>
+        <id>autoincrement-versions-maven-plugin</id>
+        <name>autoincrement-versions-maven-plugin</name>
+        <url>http://autoincrement-versions-maven-plugin.googlecode.com/svn/repo</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </pluginRepository>
+</pluginRepositories>
+  
+  <build>
+    <finalName>mywebapp-${version}</finalName>
+    <plugins>
+      <!-- Enabling and configuring regular resources filtering.
+           See also section "resources" below -->
+           <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>autoincrement-versions-maven-plugin</artifactId>
+        <version>2.0-SNAPSHOT</version>
+        <executions>
+                <execution>
+                        <id>update-pom-versions</id>
+                        <goals>
+                                <goal>increment</goal>
+                                <goal>commit</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                                <autoIncrementVersion>true</autoIncrementVersion>
+                        </configuration>
+                </execution>
+        </executions>
+</plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <!-- specify UTF-8, ISO-8859-1 or any other file encoding -->
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      
+        <!-- Enabling and configuring web resources filtering -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <filtering>true</filtering>
+              <directory>src/main/resources</directory>
+              <includes>
+                <include>**/*.properties</include>
+                <!-- include any other file types you want to filter -->
+              </includes>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+    </plugins>
+    <!-- Instructing the resources plugin to filter certain directories -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+   <profiles>
+    <!-- Development environment @ my laptop -->
+    <profile>
+      <id>development</id>
+      <properties>
+        <env>development</env>
+        <url>https://qa-slz01.scholasticlearningzone.com</url>
+      </properties>
+    </profile>
+    <!-- Production environment @ production server -->
+    <profile>
+      <id>staging</id>
+      <properties>
+        <env>staging</env>
+        <url>https://spm-slz01.scholasticlearningzone.com</url>
+      </properties>
+    </profile>
+  </profiles>
+</project>
