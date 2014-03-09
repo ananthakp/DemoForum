@@ -4,9 +4,9 @@
   <artifactId>profiling</artifactId>
   <version>003</version>
   <name>PrimeIwb</name>
-  <properties>
+  <!--properties>
 		<BUILD_NUMBER>${project.version}</BUILD_NUMBER>
-	</properties>
+	</properties-->
 
   <pluginRepositories>
     <pluginRepository>
