@@ -15,7 +15,7 @@
 </pluginRepositories>
   
   <build>
-    <finalName>mywebapp-${project.version}</finalName>
+    <finalName>${JOB_NAME}-${BUILD_NUMBER}</finalName>
     <plugins>
       <!-- Enabling and configuring regular resources filtering.
            See also section "resources" below -->
