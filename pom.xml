@@ -15,7 +15,7 @@
 </pluginRepositories-->
   
   <build>
-    <finalName>${JOB_NAME}-{project.version}.${BUILD_NUMBER}</finalName>
+    <finalName>${JOB_NAME}-${project.version}.${BUILD_NUMBER}</finalName>
     <plugins>
       <!-- Enabling and configuring regular resources filtering.
            See also section "resources" below -->
