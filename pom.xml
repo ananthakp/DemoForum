@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.scholastic</groupId>
   <artifactId>profiling</artifactId>
-  <version>1.0</version>
+  <BUILD_NUMBER>1.0</BUILD_NUMBER>
   <!--pluginRepositories>
     <pluginRepository>
         <id>autoincrement-versions-maven-plugin</id>
