@@ -2,8 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.scholastic</groupId>
   <artifactId>profiling</artifactId>
-  <BUILD_NUMBER>1.0</BUILD_NUMBER>
-  <!--pluginRepositories>
+  <version>003</version>
+  <name>PrimeIwb</name>
+  <properties>
+		<BUILD_NUMBER>${project.version}</BUILD_NUMBER>
+	</properties>
+
+  <pluginRepositories>
     <pluginRepository>
         <id>autoincrement-versions-maven-plugin</id>
         <name>autoincrement-versions-maven-plugin</name>
@@ -12,14 +17,14 @@
             <enabled>true</enabled>
         </snapshots>
     </pluginRepository>
-</pluginRepositories-->
+</pluginRepositories>
   
   <build>
-    <finalName>${JOB_NAME}-${project.version}.${BUILD_NUMBER}</finalName>
+    <finalName>${project.name}-1.0.${BUILD_NUMBER}</finalName>
     <plugins>
-      <!-- Enabling and configuring regular resources filtering.
+      <!--Enabling and configuring regular resources filtering.
            See also section "resources" below -->
-           <!--plugin>
+        <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>autoincrement-versions-maven-plugin</artifactId>
         <version>2.0-SNAPSHOT</version>
@@ -36,7 +41,7 @@
                         </configuration>
                 </execution>
         </executions>
-</plugin-->
+</plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
