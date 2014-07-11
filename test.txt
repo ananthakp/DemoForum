@@ -1,0 +1,23 @@
+11:34:22,802 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+11:34:22,803 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+11:34:22,803 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:996)
+11:34:22,804 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:932)
+11:34:22,804 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:850)
+11:34:22,805 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1300)
+11:34:22,805 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at scholastic.slms.samconnect.util.SamConnectDataHelper.callRestfulWebService(SamConnectDataHelper.java:154)
+11:34:22,806 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at scholastic.slms.gateway.util.ServerDataHelper.getServerData(ServerDataHelper.java:103)
+11:34:22,806 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at scholastic.slms.gateway.util.ServerDataHelper.updateSAMConnectCache(ServerDataHelper.java:63)
+11:34:22,806 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at scholastic.slms.scheduler.job.SlmsStartupJob$1.run(SlmsStartupJob.java:82)
+11:34:22,807 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at scholastic.meta.ScholasticSiteIdList.doForAllSites(ScholasticSiteIdList.java:175)
+11:34:22,807 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at scholastic.slms.scheduler.job.SlmsStartupJob.doExecute(SlmsStartupJob.java:74)
+11:34:22,807 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at scholastic.slms.scheduler.job.SlmsQuartzAutowireByNameJob.executeInternal(SlmsQuartzAutowireByNameJob.java:64)
+11:34:22,808 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:86)
+11:34:22,808 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at org.quartz.core.JobRunShell.run(JobRunShell.java:223)
+11:34:22,808 ERROR [] [stderr] (slmsScheduler_Worker-3) 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549)
+11:34:22,808 ERROR [] [scholastic.slms.samconnect.util.SamConnectDataHelper] (slmsScheduler_Worker-3) Failed calling SAM Connect's GatewayInfo command: http://localhost:@AppServerPort@/subcommander/GatewayInfo FROM: Server Data
+Exception=java.net.UnknownHostException: AppServerPort@
+11:34:22,809 INFO  [] [scholastic.slms.scheduler.job.SlmsStartupJob] (slmsScheduler_Worker-3) ===> Done with suite wide initializer.
+
+
+
+
